@@ -4,50 +4,27 @@
         <div class="banner">
             <img src="@/assets/img/home/banner.webp" alt="">
         </div>
-        <div class="location">
-            <div class="city">广州</div>
-            <div class="position">
-                <span>我的位置</span>
-                <img src="@/assets/img/home/icon_location.png" alt="">
-            </div>
-        </div>
+        <HomeSearchBox />
+
     </div>
 </template>
 
 <script setup>
+import useHomeStore from '@/stores/modules/home';
 import HomeNavBar from './cpns/home-nav-bar.vue'
+import HomeSearchBox from './home-search-box.vue'
+
+
+//发送网络请求
+const homeStore = useHomeStore()
+homeStore.fetchHotSuggestData()
+
 </script> 
 
 <style lang="less" scoped>
 .banner {
     img {
         width: 100%;
-    }
-}
-
-.location {
-    display: flex;
-    align-items: center;
-    height: 44px;
-    padding: 0 20px;
-
-    .city {
-        flex: 1;
-    }
-
-    .position {
-        width: 74px;
-        display: flex;
-
-        .text {
-
-            font-size: 12px;
-        }
-
-        img {
-            width: 18px;
-            height: 18px;
-        }
     }
 }
 </style>
