@@ -10,6 +10,8 @@ const useMainStore = defineStore("main", {
     token: "",
     startDate: startDate,
     endDate: endDate,
+
+    isLoading: false,
   }),
 });
 

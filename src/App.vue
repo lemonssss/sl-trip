@@ -5,6 +5,7 @@
     <TabBar v-if="!route.meta.hideTabBar" />
     <!-- 方案二：通过设置CSS样式来控制显示隐藏 -->
     <!-- <TabBar /> -->
+    <Loading />
 
   </div>
 </template>
@@ -12,6 +13,7 @@
 <script setup>
 import TabBar from '@/components/tab-bar/tab-bar.vue'
 import { useRoute } from 'vue-router'
+import Loading from './components/loading/loading.vue';
 const route = useRoute()
 </script>
 
